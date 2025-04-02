@@ -1,6 +1,9 @@
 package net.damian.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.damian.tutorialmod.item.ModCreativeModeTabs;
+import net.damian.tutorialmod.item.ModItem;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,8 +23,13 @@ public class TutorialMod {
     public static final String MOD_ID = "tutorialmod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+
     public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItem.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -34,7 +42,10 @@ public class TutorialMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItem.SAPPHIRE);
+            event.accept(ModItem.RAW_SAPPHIRE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
