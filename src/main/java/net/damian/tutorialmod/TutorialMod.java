@@ -1,6 +1,7 @@
 package net.damian.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.damian.tutorialmod.block.ModBlocks;
 import net.damian.tutorialmod.item.ModCreativeModeTabs;
 import net.damian.tutorialmod.item.ModItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -18,7 +19,8 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
-public class TutorialMod {
+public class
+TutorialMod {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "tutorialmod";
     // Directly reference a slf4j logger
@@ -30,6 +32,7 @@ public class TutorialMod {
         ModCreativeModeTabs.register(modEventBus);
 
         ModItem.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

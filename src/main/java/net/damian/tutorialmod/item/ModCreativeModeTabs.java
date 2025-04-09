@@ -1,6 +1,7 @@
 package net.damian.tutorialmod.item;
 
 import net.damian.tutorialmod.TutorialMod;
+import net.damian.tutorialmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +20,9 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItem.SAPPHIRE.get());
                         output.accept(ModItem.RAW_SAPPHIRE.get());
+                        output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+                        output.accept(ModBlocks.LIGHTBULB.get());
+                        output.accept(ModItem.WAND.get());
                     })
                     .build());
 

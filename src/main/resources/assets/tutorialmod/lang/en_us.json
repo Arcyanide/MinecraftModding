@@ -1,6 +1,10 @@
 {
   "item.tutorialmod.sapphire": "Sapphire",
   "item.tutorialmod.raw_sapphire": "Raw Sapphire",
+  "item.tutorialmod.wand": "Wand D+B :)",
+
+  "block.tutorialmod.sapphire_block": "Sapphire Block",
+  "block.tutorialmod.lightbulb": "Lightbulb",
 
   "creativetab.tutorial_tab": "Sapphire Tutorial Tab"
 }
